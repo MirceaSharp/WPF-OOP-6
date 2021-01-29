@@ -5,29 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_OOP6"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="526" Width="800">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="349" Margin="10,10,0,0" VerticalAlignment="Top" Width="379">
+        <TabControl HorizontalAlignment="Left" Height="459" Margin="10,10,0,0" VerticalAlignment="Top" Width="478">
             <TabItem Header="TV">
-                <Grid Background="#FFE5E5E5" Margin="0,0,14,18">
-                    <RadioButton Content="Sony" HorizontalAlignment="Left" Height="21" Margin="26,18,0,0" VerticalAlignment="Top" Width="92"/>
-                    <RadioButton Content="Samsung" HorizontalAlignment="Left" Height="21" Margin="81,18,0,0" VerticalAlignment="Top" Width="85"/>
+                <Grid Background="#FFE5E5E5" Margin="0,0,11,7">
+                    <RadioButton Name="rdSony" Content="Sony" HorizontalAlignment="Left" Height="21" Margin="26,18,0,0" VerticalAlignment="Top" Width="92" Checked="rdSony_Checked"/>
+                    <RadioButton Name="rdSamsung" Content="Samsung" HorizontalAlignment="Left" Height="21" Margin="81,18,0,0" VerticalAlignment="Top" Width="85" Checked="rdSamsung_Checked"/>
                     <GroupBox Header="TV type" HorizontalAlignment="Left" Height="50" Margin="10,0,0,0" VerticalAlignment="Top" Width="149"/>
                     <Label Content="Channel:" HorizontalAlignment="Left" Height="26" Margin="10,59,0,0" VerticalAlignment="Top" Width="74"/>
                     <Label Content="Volume:" HorizontalAlignment="Left" Height="26" Margin="10,85,0,0" VerticalAlignment="Top" Width="74"/>
                     <TextBox HorizontalAlignment="Left" Height="17" Margin="81,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
                     <TextBox HorizontalAlignment="Left" Height="16" Margin="81,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+                    <CheckBox Name="chkPower" Content="Power" HorizontalAlignment="Left" Height="27" Margin="267,129,0,0" VerticalAlignment="Top" Width="89"/>
+                    <Label Name="lblPower" Content="Power:" HorizontalAlignment="Left" Height="29" Margin="270,227,0,0" VerticalAlignment="Top" Width="149"/>
+                    <Label Name="lblHerz" Content="Herz:" HorizontalAlignment="Left" Height="32" Margin="270,261,0,0" VerticalAlignment="Top" Width="149"/>
+                    <Label  Name="lblImageSize" Content="Image size:" HorizontalAlignment="Left" Height="29" Margin="270,293,0,0" VerticalAlignment="Top" Width="149"/>
+                    <Label Name="lblChannel" Content="Channel:" HorizontalAlignment="Left" Height="30" Margin="270,322,0,0" VerticalAlignment="Top" Width="149"/>
+                    <Label Name="lblVolume" Content="Volume:" HorizontalAlignment="Left" Height="29" Margin="270,352,0,0" VerticalAlignment="Top" Width="149"/>
+                    <Image Name="img" HorizontalAlignment="Left" Height="163" Margin="10,139,0,0" VerticalAlignment="Top" Width="252"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Boiler">
-                <Grid Background="#FFE5E5E5" Margin="0,0,-92,-139">
-                    <ComboBox HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="140">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-12,-5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="381*"/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox Name="cbSelection" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2">
                         <ComboBoxItem Content="Tefal - Performa 2 KI110D Express+ 1,7L RVS"/>
                         <ComboBoxItem Content="Philips HD9357-10"/>
                     </ComboBox>
+                    <CheckBox Checked="chkPower2_Checked" Name="chkPower2" Content="Power" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="269,140,0,0" VerticalAlignment="Top" Width="135"/>
+                    <Image Name="img2" Grid.Column="1" HorizontalAlignment="Left" Height="357" Margin="10,69,0,0" VerticalAlignment="Top" Width="254"/>
                 </Grid>
             </TabItem>
         </TabControl>
+        <Label Name="lblBrand" Content="Brand:" HorizontalAlignment="Left" Height="29" Margin="283,193,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Name="lblType" Content="Type:" HorizontalAlignment="Left" Height="35" Margin="283,227,0,0" VerticalAlignment="Top" Width="140"/>
 
     </Grid>
 </Window>
